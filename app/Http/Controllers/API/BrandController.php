@@ -15,7 +15,7 @@ class BrandController extends Controller
 {
     public function index(Request $request) {
         try {
-            $countryCode = $request->header('CF-IPCountry') ?? 'ZZ';
+            $countryCode = app('countryCode');
             $search = $request->query('search');
 
             $query = Brand::whereHas('countries', function ($query) use ($countryCode) {

@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\API\CountryController;
+use App\Http\Controllers\API\BrandController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,4 +22,25 @@ use Illuminate\Support\Facades\Route;
 //     });
 // });
 
+Route::middleware('api')->group(function () {
 
+    Route::prefix('countries')->middleware('auth:sanctum')->group(function () {
+        Route::get('/', [CountryController::class, 'index']);
+        Route::post('/', [CountryController::class, 'store']);
+        Route::put('/{code}', [CountryController::class, 'update']);
+        Route::delete('/{code}', [CountryController::class, 'destroy']);
+    });
+
+    Route::prefix('brands')->group(function () {
+        Route::middleware('user.country')->group(function () {
+            Route::get('/', [BrandController::class, 'index']);
+            Route::get('/{brand}', [BrandController::class, 'show']);
+        });
+
+        Route::middleware('auth:sanctum')->group(function () {
+            Route::post('/', [BrandController::class, 'store']);
+            Route::put('/{brand}', [BrandController::class, 'update']);
+            Route::delete('/{brand}', [BrandController::class, 'destroy']);
+        });
+    });
+});
