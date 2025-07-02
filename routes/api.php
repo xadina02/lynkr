@@ -24,7 +24,7 @@ use App\Http\Controllers\API\BrandController;
 
 Route::prefix('lynkr')->group(function () {
 
-    Route::prefix('countries')->group(function () {
+    Route::prefix('countries')->middleware('auth:sanctum')->group(function () {
         Route::get('/', [CountryController::class, 'index']);
         Route::post('/', [CountryController::class, 'store']);
         Route::put('/{code}', [CountryController::class, 'update']);
