@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('country_brands', function (Blueprint $table) {
             $table->id();
+            $table->string('country_code');
+            $table->foreign('country_code')->references('code')->on('countries')->onDelete('cascade');
+            $table->unsignedBigInteger('brand_id');
+            $table->foreign('brand_id')->references('id')->on('brands')->onDelete('cascade');
             $table->timestamps();
         });
     }
