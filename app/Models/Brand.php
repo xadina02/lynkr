@@ -46,6 +46,6 @@ class Brand extends Model implements HasMedia
 
     public function countries(): BelongsToMany
     {
-        return $this->belongsToMany(Country::class, 'country_brands', 'brand_id', 'country_code');
+        return $this->belongsToMany(Country::class, 'country_brands', 'brand_id', 'country_code', 'id', 'code');
     }
 }

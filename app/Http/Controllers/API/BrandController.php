@@ -26,7 +26,7 @@ class BrandController extends Controller
                 $query->where('name', 'like', '%' . $search . '%');
             }
 
-            $brands = $query->get();
+            $brands = $query->paginate();
 
             return response()->json([
                 'message' => 'Brands retrieved successfully.',

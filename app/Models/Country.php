@@ -21,6 +21,6 @@ class Country extends Model
 
     public function brands(): BelongsToMany
     {
-        return $this->belongsToMany(Brand::class, 'country_brands', 'country_code', 'brand_id');
+        return $this->belongsToMany(Brand::class, 'country_brands', 'country_code', 'brand_id', 'code', 'id');
     }
 }
