@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API;
 
 use Illuminate\Http\Request;
 use App\Models\Country;
@@ -8,6 +8,7 @@ use App\Http\Resources\CountryResource;
 use App\Http\Requests\CreateCountryRequest;
 use App\Http\Requests\UpdateCountryRequest;
 use Illuminate\Support\Facades\Log;
+use App\Http\Controllers\Controller;
 
 class CountryController extends Controller
 {
