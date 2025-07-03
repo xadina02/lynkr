@@ -130,7 +130,6 @@
 
     &:hover {
         background: #1b41a9;
-        /* text-decoration: underline; */
     }
 
     @media (max-width: 1024px) {
@@ -152,7 +151,6 @@
 
     &:hover {
         background: #8f1919;
-        /* text-decoration: underline; */
     }
 
     @media (max-width: 1024px) {

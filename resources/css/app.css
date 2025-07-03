@@ -7,9 +7,9 @@
 @import './components/modal.css';
 
 .body-div {
-    color: #1f2937; /* Dark gray text */
-    font-family: 'Inter', sans-serif; /* Modern sans-serif font */
-    padding: 0 5rem; /* General padding for the body */
+    color: #1f2937;
+    font-family: 'Inter', sans-serif;
+    padding: 0 5rem;
 
     @media(max-width: 500px) {
         padding: 0 1rem;
