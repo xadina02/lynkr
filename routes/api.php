@@ -2,8 +2,9 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\API\CountryController;
+use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\BrandController;
+use App\Http\Controllers\API\CountryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +24,10 @@ use App\Http\Controllers\API\BrandController;
 // });
 
 Route::prefix('lynkr')->group(function () {
+    Route::prefix('auth')->group(function () {
+        Route::post('/login', [AuthController::class, 'login']);
+        Route::post('/logout', [AuthController::class, 'logout']);
+    });
 
     Route::prefix('countries')->middleware('auth:sanctum')->group(function () {
         Route::get('/', [CountryController::class, 'index']);
