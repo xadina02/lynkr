@@ -9,7 +9,7 @@
 </head>
 
 <body class="body-div min-h-screen flex flex-col">
-    <div class="form-container" data-brand-id="{{ $brandId }}">
+    <div class="form-container">
         <h1 class="form-title">Update Brand</h1>
 
         <div id="form-error" class="form-error"></div>

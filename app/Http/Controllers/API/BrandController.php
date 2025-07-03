@@ -71,7 +71,7 @@ class BrandController extends Controller
 
     public function show($id) {
         try {
-            $brand = Brand::findOrFail($id);
+            $brand = Brand::with('countries')->findOrFail($id);
             return response()->json([
                 'message' => 'Brand retrieved successfully.',
                 'data' => new BrandResource($brand)

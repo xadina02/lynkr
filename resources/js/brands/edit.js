@@ -6,7 +6,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     const form = document.getElementById("update-brand-form");
     const errorDiv = document.getElementById("form-error");
     const countriesSelect = document.getElementById("countries");
-    const brandId = document.querySelector(".form-container").dataset.brandId;
+    // const brandId = document.querySelector(".form-container").dataset.brandId;
+
+    const urlParts = window.location.pathname.split("/");
+    const brandId = urlParts[2];
 
     const loadCountries = async (selectedCodes = []) => {
         try {
@@ -35,7 +38,12 @@ document.addEventListener("DOMContentLoaded", async () => {
 
             form.name.value = brand.name;
             form.rating.value = brand.rating;
-            await loadCountries(brand.country_codes || []);
+
+            const selectedCodes = (brand.countries || []).map((c) => c.code);
+            await loadCountries(selectedCodes);
+
+            console.log("Brand Country codes: ", selectedCodes);
+
         } catch (err) {
             errorDiv.textContent = "Failed to load brand details.";
         }
@@ -50,9 +58,17 @@ document.addEventListener("DOMContentLoaded", async () => {
         const name = form.name.value.trim();
         const rating = Number(form.rating.value);
         const imageFile = form.image.files[0];
-        const countries = Array.from(form.countries.selectedOptions).map(opt => opt.value);
+        const countries = Array.from(form.countries.selectedOptions).map(
+            (opt) => opt.value
+        );
 
-        if (!name || isNaN(rating) || rating < 1 || rating > 5 || countries.length === 0) {
+        if (
+            !name ||
+            isNaN(rating) ||
+            rating < 1 ||
+            rating > 5 ||
+            countries.length === 0
+        ) {
             errorDiv.textContent = "Please fill out all fields correctly.";
             return;
         }
@@ -65,12 +81,12 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         try {
             const response = await fetch(`/api/lynkr/brands/${brandId}`, {
-                method: "POST",
+                method: "PUT",
                 headers: {
                     Authorization: `${tokenType} ${token}`,
-                    Accept: "application/json"
+                    Accept: "application/json",
                 },
-                body: formData
+                body: formData,
             });
 
             if (!response.ok) {
@@ -78,7 +94,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 throw new Error(errorData.message || "Failed to update brand.");
             }
 
-            window.location.href = "/brands";
+            window.location.href = "/";
         } catch (err) {
             errorDiv.textContent = err.message || "Failed to update brand.";
         }
