@@ -62,6 +62,12 @@ Follow these steps to run the application locally:
 
 Visit ```http://127.0.0.1:8000``` in your browser to explore the app.
 
+Login Credentials
+```
+Email: admin@lynkr.info
+Password: password
+```
+
 ⸻
 
 📂 Additional Commands
