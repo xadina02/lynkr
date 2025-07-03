@@ -20,3 +20,12 @@ Route::get('/', function () {
 Route::get('/login', function () {
     return view('layout.authentication.login');
 });
+
+Route::prefix('brands')->group(function () {
+    Route::get('{id}/edit', function () {
+        return view('layout.brands.update');
+    });
+    Route::get('create', function () {
+        return view('layout.brands.create');
+    });
+});

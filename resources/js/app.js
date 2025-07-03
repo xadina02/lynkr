@@ -2,16 +2,13 @@ import "./bootstrap";
 import "./fetcher";
 import "./login";
 import "./brands/index";
+import "./brands/create";
+import "./brands/edit";
 
 const toggleAuthUI = () => {
     const authNav = document.getElementById("auth-nav");
     const guestNav = document.getElementById("guest-nav");
     const token = localStorage.getItem("lynkr_token");
-
-    console.log("Token:", token);
-    
-    console.log("authNav:", authNav);
-    console.log("guestNav:", guestNav);
 
     if (authNav && guestNav) {
         if (token) {

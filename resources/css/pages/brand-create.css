@@ -1,0 +1,80 @@
+.form-container {
+    max-width: 600px;
+    margin: 3rem auto;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+}
+
+.form-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #2563eb;
+    text-align: center;
+}
+
+.form-error {
+    color: #dc2626;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    min-height: 1.4em;
+    text-align: center;
+}
+
+.brand-form .form-group {
+    margin-bottom: 1.25rem;
+}
+
+.form-label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    color: #334155;
+}
+
+.form-input {
+    width: 90%;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    border: 1.5px solid #cbd5e1;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-input:focus {
+    border-color: #2563eb;
+    outline: none;
+    box-shadow: 0 0 8px rgba(37, 99, 235, 0.3);
+}
+
+.form-note {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-top: -0.8rem;
+}
+
+.submit-button {
+    width: 100%;
+    background-color: #2563eb;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 0.9rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.25s ease;
+}
+
+.submit-button:hover {
+    background-color: #1e40af;
+}
+
+@media (max-width: 640px) {
+    .form-container {
+        margin: 1.5rem 1rem;
+        padding: 1.5rem;
+    }
+}

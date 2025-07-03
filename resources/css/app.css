@@ -1,6 +1,7 @@
 @import './components/brand-card.css';
 @import './components/search-bar.css';
 @import './pages/brands.css';
+@import './pages/brand-create.css';
 @import './pages/login.css';
 @import './pages/countries.css';
 @import './components/modal.css';

@@ -39,12 +39,12 @@ Route::prefix('lynkr')->group(function () {
     Route::prefix('brands')->group(function () {
         Route::middleware('user.country')->group(function () {
             Route::get('/', [BrandController::class, 'index']);
-            Route::get('/{brand}', [BrandController::class, 'show']);
         });
 
         Route::middleware('auth:sanctum')->group(function () {
             Route::post('/', [BrandController::class, 'store']);
             Route::put('/{brand}', [BrandController::class, 'update']);
+            Route::get('/{brand}', [BrandController::class, 'show']);
             Route::delete('/{brand}', [BrandController::class, 'destroy']);
         });
     });

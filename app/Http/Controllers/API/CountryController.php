@@ -24,7 +24,7 @@ class CountryController extends Controller
                 }
             }
 
-            $countries = CountryResource::collection($query->paginate());
+            $countries = CountryResource::collection($query->get());
 
             return response()->json(['message' => 'Countries retrieved successfully', 'data' => $countries], 201);
         } catch (\Exception $e) {

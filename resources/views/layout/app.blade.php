@@ -13,7 +13,7 @@
         <div class="text-xl font-bold">Lynkr</div>
         <div class="actions">
             <div id="auth-nav" class="hidden">
-                <a href="{{ url('/countries') }}" class="nav-link mr-4"><b>Countries</b></a>
+                {{-- <a href="{{ url('/countries') }}" class="nav-link mr-4"><b>Countries</b></a> --}}
                 {{-- <a href="{{ url('/brands') }}" class="nav-link mr-4"><b>Brands</b></a> --}}
                 <form id="logout-form" class="inline">
                     @csrf

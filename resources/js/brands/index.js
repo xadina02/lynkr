@@ -77,7 +77,6 @@ document.addEventListener("DOMContentLoaded", () => {
                                 'Authorization': `${tokenType} ${token}`,
                                 'Accept': 'application/json',
                                 'Content-Type': 'application/json',
-                                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
                             }
                         });
 
