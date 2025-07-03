@@ -8,9 +8,6 @@
             find specific brands.
             Discover exclusive offers and promotions available only for a limited time. Each brand card provides essential
             information to help you make informed choices.
-            Stay updated with the latest trends and featured brands in your area. Don't miss out on special deals—check back
-            often as new brands are added regularly.
-            Enjoy browsing and finding the perfect brand for your needs!
         </b>
         <div class="w-full flex justify-center my-6">
             <br>

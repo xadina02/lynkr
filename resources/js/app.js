@@ -3,7 +3,7 @@ import "./fetcher";
 import "./login";
 import "./brands/index";
 import "./brands/create";
-import "./brands/edit";
+// import "./brands/edit";
 
 const toggleAuthUI = () => {
     const authNav = document.getElementById("auth-nav");

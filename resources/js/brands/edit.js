@@ -43,7 +43,6 @@ document.addEventListener("DOMContentLoaded", async () => {
             await loadCountries(selectedCodes);
 
             console.log("Brand Country codes: ", selectedCodes);
-
         } catch (err) {
             errorDiv.textContent = "Failed to load brand details.";
         }
@@ -74,14 +73,15 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
 
         const formData = new FormData();
+        formData.append("_method", "PUT");
         formData.append("name", name);
         formData.append("rating", rating);
         countries.forEach((code) => formData.append("country_codes[]", code));
         if (imageFile) formData.append("image", imageFile);
 
         try {
-            const response = await fetch(`/api/lynkr/brands/${brandId}`, {
-                method: "PUT",
+            const response = await fetch(`/api/lynkr/brands/edit/${brandId}`, {
+                method: "POST",
                 headers: {
                     Authorization: `${tokenType} ${token}`,
                     Accept: "application/json",

@@ -23,9 +23,9 @@ class UpdateBrandRequest extends FormRequest
     {
         return [
             'image' => 'nullable|image|max:2048',
-            'name' => 'nullable|string|max:255',
-            'rating' => 'nullable|integer|min:1|max:5',
-            'country_codes' => 'nullable|array',
+            'name' => 'required|string|max:255',
+            'rating' => 'required|integer|min:1|max:5',
+            'country_codes' => 'required|array',
             'country_codes.*' => 'string|size:2|exists:countries,code',
         ];
     }

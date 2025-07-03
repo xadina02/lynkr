@@ -42,8 +42,8 @@ Route::prefix('lynkr')->group(function () {
         });
 
         Route::middleware('auth:sanctum')->group(function () {
-            Route::post('/', [BrandController::class, 'store']);
-            Route::put('/{brand}', [BrandController::class, 'update']);
+            Route::post('create/', [BrandController::class, 'store']);
+            Route::put('edit/{brand}', [BrandController::class, 'update']);
             Route::get('/{brand}', [BrandController::class, 'show']);
             Route::delete('/{brand}', [BrandController::class, 'destroy']);
         });

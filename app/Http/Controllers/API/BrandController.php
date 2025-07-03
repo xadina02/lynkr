@@ -69,7 +69,8 @@ class BrandController extends Controller
         }
     }
 
-    public function show($id) {
+    public function show($id) 
+    {
         try {
             $brand = Brand::with('countries')->findOrFail($id);
             return response()->json([

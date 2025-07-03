@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
         try {
-            const response = await fetch("/api/lynkr/brands", {
+            const response = await fetch("/api/lynkr/brands/create", {
                 method: "POST",
                 headers: {
                     Authorization: `${tokenType} ${token}`,
