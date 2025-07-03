@@ -1,0 +1,76 @@
+@import './components/brand-card.css';
+@import './components/search-bar.css';
+@import './pages/brands.css';
+@import './pages/login.css';
+@import './pages/countries.css';
+@import './components/modal.css';
+
+.body-div {
+    color: #1f2937; /* Dark gray text */
+    font-family: 'Inter', sans-serif; /* Modern sans-serif font */
+    padding: 0 5rem; /* General padding for the body */
+
+    @media(max-width: 500px) {
+        padding: 0 1rem;
+    }
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.login-button {
+    background: #096725;
+    color: #ffffff;
+    border-radius: 8px;
+    font-size: 16px;
+    padding: 0.3rem 1rem;
+    text-decoration: none;
+    /* box-shadow: none; */
+    /* outline: none; */
+
+    &:hover {
+        background: #0c481e;
+    }
+}
+
+.logout-button {
+    background: #da2511;
+    color: #ffffff;
+    border-radius: 8px;
+    font-size: 16px;
+    padding: 0.3rem 1rem;
+    text-decoration: none;
+
+    &:hover {
+        background: #b52414;
+    }
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#auth-nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.nav-link {
+    align-self: center;
+    text-decoration: none;
+    color: #000000;
+
+    &:hover {
+        color: #096725;
+    }
+}
+
+.hidden {
+    display: none !important;
+}

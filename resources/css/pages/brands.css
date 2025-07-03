@@ -1,0 +1,133 @@
+.brand-card {
+    background-color: #f8fafc; /* Light gray background */
+    border: 1px solid #e5e7eb; /* Light gray border */
+    border-radius: 0.5rem; /* Rounded corners */
+    padding: 1rem; /* Padding inside the card */
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    margin-bottom: 1rem; /* Space between cards */
+    transition: transform 0.2s ease-in-out; /* Smooth hover effect */
+
+    @media (max-width: 680px) {
+        flex-direction: column;
+        justify-content: left;
+        text-align: left;
+        gap: 0;
+    }
+    @media (max-width: 680px) {
+        flex-direction: column;
+        justify-content: left;
+        text-align: left;
+        gap: 0;
+    }
+}
+
+.brand-image {
+    width: 25%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    border-radius: 2px;
+
+    @media (max-width: 680px) {
+        width: 100%;
+    }
+}
+
+.brand-text-div {
+    /* background: blue; */
+    width: 50%;
+    margin-top: 0.5rem; /* Space between image and text */
+
+    @media (max-width: 680px) {
+        width: 100%;
+    }
+}
+
+.brand-name {
+    font-size: 1.25rem; /* Larger font size for brand name */
+    font-weight: 600; /* Semi-bold font weight */
+    color: #1f2937; /* Dark gray text */
+}
+
+.brand-rating {
+    font-size: 1rem; /* Regular font size for rating */
+    color: #4b5563; /* Medium gray text */
+}
+
+.explore-button {
+    background: #096725;
+    color: #ffffff;
+    font-size: 16px;
+    border-radius: 8px;
+    height: 50px;
+    padding: 0 3rem;
+    box-shadow: none;
+    outline: none;
+
+    &:hover {
+        background: #0c481e;
+    }
+
+    @media (max-width: 680px) {
+        width: 100%;
+    }
+}
+
+#add-brand-btn {
+    background: #096725;
+    color: #ffffff;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 8px;
+    height: 50px;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: none;
+    outline: none;
+    transition: background 0.3s ease;
+
+    &:hover {
+        background: #0c481e;
+    }
+}
+
+.brand-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 10%;
+
+    @media (max-width: 680px) {
+        width: 100%;
+    }
+}
+
+.edit-button {
+    color: #2563eb;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover {
+        color: #1d4ed8;
+        text-decoration: underline;
+    }
+}
+
+.delete-btn {
+    color: #dc2626;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.2s ease;
+
+    &:hover {
+        color: #b91c1c;
+        text-decoration: underline;
+    }
+}
